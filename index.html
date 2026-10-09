@@ -16,25 +16,32 @@
       <h2>My Really Cool Blog Post</h2>
     </div>
     <!-- <img src="images/museum.jpg" alt="placeholder"> -->
-
+<!-- the <picture> tag is a wrapper for responsive images. it holds all of the different sized images.-->
     <picture>
-<!--this one will show up on a bigger screen. 1x for 1 pixel density 2x for 2 pixel density and 3x for 3 pixel density
-square shows up for 1600 pixels or more-->
+
+        <!--<source srcset=""> is used with <picture> to give the browser multiple images to choose from based on the size of 
+        screen and pixel density. this prevents devices from downloading a larger image when its not needed-->
+
+        <!--it tells the browser to display the images needed based on viewport size. so if it says for example 
+<source srcset="image" media="(min-width: 1600px)"> it will display that image for screens 1600 pixels or higher-->        
+
+<!--this square will show up on a bigger screen. 1x for 1 pixel density 2x for 2 pixel density and 3x for 3 pixel density
+this square shows up for 1600 pixels or more-->
       <source srcset="images/museum-800x800_1x.jpg 1x,
                       images/museum-1600x1600_2x.jpg 2x,
                       images/museum-2400x2400_3x.jpg 3x"
               media="(min-width: 1600px)">
-<!--this one will show up for screens 1280 pixels or more up until 1600 pixels-->
+<!--this square will show up for screens 1280 pixels or more up until 1600 pixels-->
       <source srcset="images/museum-640x640_1x.jpg 1x,
                       images/museum-1280x1280_2x.jpg 2x,
                       images/museum-1920x1920_3x.jpg 3x"
               media="(min-width: 1280px)">
-<!--this will show up on screens 960 pixels or more until 1280 pixels-->
+<!--this square will show up on screens 960 pixels or more until 1280 pixels-->
       <source srcset="images/museum-480x480_1x.jpg 1x,
                       images/museum-960x960_2x.jpg 2x,
                       images/museum-1440x1440_3x.jpg 3x"
               media="(min-width: 960px)">
-<!--landscape is for smaller devices such as tablets. these will show up for 720 pixel or more-->
+<!--landscape is for smaller devices such as tablets or phones. these will show up for 720 pixel or more up until 960 pixels then it will switch to square-->
       <source srcset="images/museum-720x_landscape_1x.jpg 1x,
                       images/museum-1440x_landscape_2x.jpg 2x,
                       images/museum-2160x_landscape_3x.jpg 3x"
@@ -44,7 +51,7 @@ square shows up for 1600 pixels or more-->
                       images/museum-960x_landscape_2x.jpg 2x,
                       images/museum-1440x_landscape_3x.jpg 3x"
               media="(min-width: 480px)">
-
+<!--this one is for the smallest screen size and this one will show up until 480pixels-->
        <source srcset="images/museum-320x_landscape_1x.jpg 1x,
                       images/museum-640x_landscape_2x.jpg 2x,
                       images/museum-960x_landscape_3x.jpg 3x"
