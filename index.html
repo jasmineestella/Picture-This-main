@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Picture This!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="title">
+      <h1>Picture This!</h1>
+      <h2>My Really Cool Blog Post</h2>
+    </div>
+    <!-- <img src="images/museum.jpg" alt="placeholder"> -->
+
+    <picture>
+<!--this one will show up on a bigger screen. 1x for 1 pixel density 2x for 2 pixel density and 3x for 3 pixel density
+square shows up for 1600 pixels or more-->
+      <source srcset="images/museum-800x800_1x.jpg 1x,
+                      images/museum-1600x1600_2x.jpg 2x,
+                      images/museum-2400x2400_3x.jpg 3x"
+              media="(min-width: 1600px)">
+<!--this one will show up for screens 1280 pixels or more up until 1600 pixels-->
+      <source srcset="images/museum-640x640_1x.jpg 1x,
+                      images/museum-1280x1280_2x.jpg 2x,
+                      images/museum-1920x1920_3x.jpg 3x"
+              media="(min-width: 1280px)">
+<!--this will show up on screens 960 pixels or more until 1280 pixels-->
+      <source srcset="images/museum-480x480_1x.jpg 1x,
+                      images/museum-960x960_2x.jpg 2x,
+                      images/museum-1440x1440_3x.jpg 3x"
+              media="(min-width: 960px)">
+<!--landscape is for smaller devices such as tablets. these will show up for 720 pixel or more-->
+      <source srcset="images/museum-720x_landscape_1x.jpg 1x,
+                      images/museum-1440x_landscape_2x.jpg 2x,
+                      images/museum-2160x_landscape_3x.jpg 3x"
+              media="(min-width: 720px)">
+<!--this size is more for larger phone sized screens and will show up on screens 480 pixels or more up until 720 pixels-->
+      <source srcset="images/museum-480x_landscape_1x.jpg 1x,
+                      images/museum-960x_landscape_2x.jpg 2x,
+                      images/museum-1440x_landscape_3x.jpg 3x"
+              media="(min-width: 480px)">
+
+       <source srcset="images/museum-320x_landscape_1x.jpg 1x,
+                      images/museum-640x_landscape_2x.jpg 2x,
+                      images/museum-960x_landscape_3x.jpg 3x"
+              media="(min-width: 320px)">
+              
+        <img class="original-image"
+             src="images/museum.jpg"
+             alt="Inside a museum">
+
+    </picture>
+
+  </header>
+</body>
+
+</html>
